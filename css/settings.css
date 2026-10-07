@@ -1,0 +1,580 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #8b5cf6;
+    --accent-2: #3b82f6;
+    --bg: #08090d;
+    --card: rgba(255, 255, 255, 0.045);
+    --border: rgba(255, 255, 255, 0.09);
+    --text: #ffffff;
+    --muted: #9297a5;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(8, 9, 13, 0.82);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.brand-logo {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent-2)
+    );
+
+    box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.35);
+}
+
+.menu-btn {
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 270px;
+    height: 100vh;
+
+    padding: 25px 18px;
+
+    background: rgba(13, 14, 20, 0.97);
+    backdrop-filter: blur(25px);
+
+    border-right: 1px solid var(--border);
+
+    z-index: 300;
+
+    transform: translateX(-100%);
+    transition: 0.3s ease;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 45px;
+}
+
+.sidebar-brand h2 {
+    font-size: 18px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+
+    border: 0;
+    background: transparent;
+
+    color: white;
+    font-size: 27px;
+
+    cursor: pointer;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar nav a {
+    color: #aeb3c1;
+    text-decoration: none;
+
+    padding: 14px 15px;
+
+    border-radius: 12px;
+
+    transition: 0.25s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    color: white;
+
+    background: linear-gradient(
+        90deg,
+        rgba(139, 92, 246, 0.2),
+        rgba(59, 130, 246, 0.08)
+    );
+
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    z-index: 200;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 35px 20px 50px;
+}
+
+.page-header {
+    margin-bottom: 35px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.page-header h1 {
+    font-size: clamp(30px, 7vw, 45px);
+    margin: 8px 0;
+}
+
+.page-header p {
+    color: var(--muted);
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 14px;
+}
+
+.section-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(139, 92, 246, 0.1);
+
+    border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.section-title h2 {
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+.section-title p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================
+   SETTINGS CARD
+========================= */
+
+.settings-card,
+.info-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(18px);
+
+    overflow: hidden;
+}
+
+.setting-row {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px;
+}
+
+.setting-info h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.setting-info p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.divider {
+    height: 1px;
+    background: var(--border);
+}
+
+
+/* =========================
+   ACCENT COLORS
+========================= */
+
+.accent-options {
+    display: flex;
+    gap: 10px;
+}
+
+.accent-btn {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    border: 2px solid transparent;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.accent-btn.active {
+    transform: scale(1.15);
+    border-color: white;
+}
+
+.accent-btn.purple {
+    background: #8b5cf6;
+}
+
+.accent-btn.blue {
+    background: #3b82f6;
+}
+
+.accent-btn.cyan {
+    background: #06b6d4;
+}
+
+
+/* =========================
+   SWITCH
+========================= */
+
+.switch {
+    position: relative;
+
+    width: 48px;
+    height: 26px;
+
+    flex-shrink: 0;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+
+    background: #292c35;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    left: 3px;
+    top: 3px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    transition: 0.25s;
+}
+
+.switch input:checked + .slider {
+    background: var(--accent);
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(22px);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.danger-btn,
+.reset-btn {
+    border: 0;
+
+    padding: 10px 17px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.danger-btn {
+    color: #ff8585;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.reset-btn {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent-2)
+    );
+}
+
+.danger-btn:hover,
+.reset-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 17px 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.info-item:last-child {
+    border-bottom: 0;
+}
+
+.info-item span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.info-item strong {
+    font-size: 13px;
+    text-align: right;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+
+    color: #666b78;
+
+    font-size: 12px;
+
+    margin-top: 45px;
+}
+
+
+/* =========================
+   COMPACT MODE
+========================= */
+
+body.compact .setting-row {
+    min-height: 65px;
+    padding: 14px 18px;
+}
+
+body.compact .settings-section {
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 900px) {
+
+    .menu-btn {
+        display: none;
+    }
+
+    .sidebar {
+        transform: translateX(0);
+    }
+
+    .close-btn {
+        display: none;
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    .main {
+        margin-left: 270px;
+        max-width: none;
+        width: calc(100% - 270px);
+        padding: 45px 45px 60px;
+    }
+
+    .topbar {
+        margin-left: 270px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .main {
+        padding: 28px 14px 45px;
+    }
+
+    .setting-row {
+        align-items: flex-start;
+    }
+
+    .setting-info {
+        max-width: 72%;
+    }
+
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .info-item strong {
+        text-align: left;
+    }
+
+}
