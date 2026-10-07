@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kewa Project Data Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="brand">
+            <div class="brand-logo">K</div>
+
+            <div>
+                <h1>Kewa</h1>
+                <span>Project Data Tracker</span>
+            </div>
+        </div>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </header>
+
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+
+    <button class="close-btn" id="closeBtn">
+        ×
+    </button>
+
+    <div class="sidebar-brand">
+        <div class="brand-logo">K</div>
+        <h2>Kewa Tracker</h2>
+    </div>
+
+    <nav>
+
+        <a href="index.html" class="active">
+            🏠 Dashboard
+        </a>
+
+        <a href="projects.html">
+            📁 Projects
+        </a>
+
+        <a href="analytics.html">
+            📊 Analytics
+        </a>
+
+        <a href="settings.html">
+            ⚙️ Settings
+        </a>
+
+    </nav>
+
+</aside>
+
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+
+    <!-- Main -->
+    <main class="main">
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div>
+                <span class="hero-label">
+                    PROJECT MANAGEMENT
+                </span>
+
+                <h2>
+                    Manage Your Projects
+                    <span>Smartly.</span>
+                </h2>
+
+                <p>
+                    Track projects, technologies, files,
+                    progress and important development data
+                    from one place.
+                </p>
+
+                <a href="projects.html" class="primary-btn">
+                    View Projects →
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- Stats -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <span>📁</span>
+                <h3 id="totalProjects">0</h3>
+                <p>Total Projects</p>
+            </div>
+
+            <div class="stat-card">
+                <span>🚀</span>
+                <h3 id="completedProjects">0</h3>
+                <p>Completed</p>
+            </div>
+
+            <div class="stat-card">
+                <span>⚡</span>
+                <h3 id="activeProjects">0</h3>
+                <p>Active</p>
+            </div>
+
+            <div class="stat-card">
+                <span>💻</span>
+                <h3 id="technologies">0</h3>
+                <p>Technologies</p>
+            </div>
+
+        </section>
+
+
+        <!-- Recent Projects -->
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span>RECENT WORK</span>
+                    <h2>Recent Projects</h2>
+                </div>
+
+                <a href="projects.html">
+                    View All →
+                </a>
+
+            </div>
+
+
+            <div class="project-grid" id="recentProjects">
+                <!-- JS will add projects here -->
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <p>
+            © 2026 Kewa Project Data Tracker
+        </p>
+    </footer>
+
+
+    <script src="data/projects.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

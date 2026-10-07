@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Kewa Tracker</title>
+
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-logo">K</div>
+            <span>Kewa Tracker</span>
+        </div>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+        <button class="close-btn" id="closeBtn">
+            ×
+        </button>
+
+        <div class="sidebar-brand">
+            <div class="brand-logo">K</div>
+            <h2>Kewa Tracker</h2>
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="projects.html">
+                📁 Projects
+            </a>
+
+            <a href="analytics.html">
+                📊 Analytics
+            </a>
+
+            <a href="settings.html" class="active">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main class="main">
+
+        <div class="page-header">
+
+            <div>
+                <span class="eyebrow">CONTROL CENTER</span>
+
+                <h1>Settings</h1>
+
+                <p>
+                    Customize your Kewa Project Data Tracker.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Appearance -->
+        <section class="settings-section">
+
+            <div class="section-title">
+                <span class="section-icon">🎨</span>
+
+                <div>
+                    <h2>Appearance</h2>
+                    <p>Customize the look of your dashboard.</p>
+                </div>
+            </div>
+
+
+            <div class="settings-card">
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Accent Color</h3>
+
+                        <p>
+                            Choose your preferred interface accent.
+                        </p>
+
+                    </div>
+
+
+                    <div class="accent-options">
+
+                        <button
+                            class="accent-btn purple active"
+                            data-accent="purple">
+                        </button>
+
+                        <button
+                            class="accent-btn blue"
+                            data-accent="blue">
+                        </button>
+
+                        <button
+                            class="accent-btn cyan"
+                            data-accent="cyan">
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Compact Mode</h3>
+
+                        <p>
+                            Reduce spacing to display more information.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="compactMode">
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Preferences -->
+        <section class="settings-section">
+
+            <div class="section-title">
+
+                <span class="section-icon">⚙️</span>
+
+                <div>
+                    <h2>Preferences</h2>
+
+                    <p>
+                        Control how the tracker behaves.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="settings-card">
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Notifications</h3>
+
+                        <p>
+                            Enable project-related notifications.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="notifications">
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Confirm Actions</h3>
+
+                        <p>
+                            Ask before performing important actions.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="confirmActions">
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Storage -->
+        <section class="settings-section">
+
+            <div class="section-title">
+
+                <span class="section-icon">💾</span>
+
+                <div>
+
+                    <h2>Storage</h2>
+
+                    <p>
+                        Manage locally saved application preferences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-card">
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Saved Preferences</h3>
+
+                        <p>
+                            Your settings are stored locally on this device.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="danger-btn"
+                        id="clearSettings">
+                        Clear
+                    </button>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Reset Settings</h3>
+
+                        <p>
+                            Restore all settings to their default values.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="reset-btn"
+                        id="resetSettings">
+                        Reset
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- App Info -->
+        <section class="settings-section">
+
+            <div class="section-title">
+
+                <span class="section-icon">ℹ️</span>
+
+                <div>
+
+                    <h2>App Information</h2>
+
+                    <p>
+                        Information about this project.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-item">
+                    <span>Application</span>
+                    <strong>Kewa Project Data Tracker</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Version</span>
+                    <strong>V1.0</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Build</span>
+                    <strong>Frontend Edition</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Storage</span>
+                    <strong>Local Storage</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="footer">
+            © 2026 Kewa Project Data Tracker
+        </footer>
+
+    </main>
+
+
+    <script src="js/settings.js"></script>
+
+</body>
+</html>
